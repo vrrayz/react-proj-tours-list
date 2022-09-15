@@ -59,6 +59,28 @@ body {
   color: #60adec;
   cursor: pointer;
 }
+.text-center{
+  text-align: center;
+}
+.btn {
+  /* display: block; */
+  /* width: 70%; */
+  border-color: #f28ab2;
+  background: transparent;
+  color: #f28ab2;
+  margin: 1rem auto 0;
+  text-transform: capitalize;
+  font-size: 16px;
+  padding: .5rem;
+  letter-spacing: .1rem;
+  border-radius: .25rem;
+  outline: 1px solid rgba(242, 138, 178, .8);
+  cursor: pointer;
+}
+.btn:hover{
+  background-color: #f28ab2;
+  color: #fff;
+}
 .d-flex{
   display: flex;
 }
@@ -70,6 +92,12 @@ body {
 }
 .mt-3{
   margin-top: 24px;
+}
+.mb-0{
+  margin-bottom: 0px;
+}
+.mb-1{
+  margin-bottom: 8px;
 }
 .my-1{
   margin-top: 8px;
