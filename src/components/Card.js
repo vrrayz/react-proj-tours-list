@@ -1,34 +1,30 @@
 import React, {useState} from "react";
 
-const Card = () => {
-    const text = `Paris is synonymous with the finest things that culture can offer — in
-    art, fashion, food, literature, and ideas. On this tour, your
-    Paris-savvy Rick Steves guide will immerse you in the very best of the
-    City of Light: the masterpiece-packed Louvre and Orsay museums,
-    resilient Notre-Dame Cathedral, exquisite Sainte-Chapelle, and
-    extravagant Palace of Versailles. You'll also enjoy guided
-    neighborhood walks through the city's historic heart as well as
-    quieter moments to slow down and savor the city's intimate cafés,
-    colorful markets, and joie de vivre. Join us for the Best of Paris in
-    7 Days!`
+const Card = (props) => {
+    const {id,name,info,image,price} = props.tour
+    const text = info
     const [isMore, setIsMore] = useState(false)
+    // console.log(name)
   return (
-    <div className="card">
+    <div className="card my-4">
       <img
-        src="https://dl.airtable.com/.attachments/a0cd0702c443f31526267f38ea5314a1/2447eb7a/paris.jpg"
+        src={image}
         className="card-img-top"
-        alt="cardimg"
+        alt={id}
       />
       <div className="card-body">
         <div className="d-flex content-between my-1 mx-3">
-          <h3>Best Of Paris In 7 Days Tour</h3>
+          <h3>{name}</h3>
           <div className="my-auto">
-            <span className="badge">$1,994</span>
+            <span className="badge">${price}</span>
           </div>
         </div>
-        <p className="card-text mx-3">
+        <p className="card-text mx-3 mb-0">
             {isMore ? text : `${text.substring(0,208)}...`} <span className="extra-text" onClick={() => setIsMore(!isMore)}>{isMore ? 'Show Less':'Read More'}</span>
         </p>
+        <div className="text-center">
+            {props.children}
+        </div>
       </div>
     </div>
   );
